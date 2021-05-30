@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\CalixtosStore.Application\CalixtosStore.Application.csproj" />
+		<ProjectReference Include="..\CalixtosStore.Data\CalixtosStore.Data.csproj" />
+		<ProjectReference Include="..\CalixtosStore.Domain.Core\CalixtosStore.Domain.Core.csproj" />
+		<ProjectReference Include="..\CalixtosStore.Domain\CalixtosStore.Domain.csproj" />
+		<ProjectReference Include="..\Equinox.Infra.CrossCutting.Bus\CalixtosStore.Infra.CrossCutting.Bus.csproj" />
+	</ItemGroup>
+</Project>

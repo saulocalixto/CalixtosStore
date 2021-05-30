@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalixtosStore", "CalixtosStore\CalixtosStore.csproj", "{05906F7D-3EB2-4F5E-BC2B-0D46AB7AE7B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{7962C006-D2E8-49BD-9387-CC7DCE2C832D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{60E84AC9-8874-40F5-AEA2-E641014DD4FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{DE0CD24B-A5B4-4AD7-90FA-9FD14467689E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{B7E19654-1D82-47FB-A03D-4FF238B6F20A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalixtosStore.Application", "CalixtosStore.Application\CalixtosStore.Application.csproj", "{609BB1CD-FEB5-44DF-B9A4-359135A192FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalixtosStore.Domain", "CalixtosStore.Domain\CalixtosStore.Domain.csproj", "{93093961-38DB-40A2-8471-F3F353B604AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalixtosStore.Infra.CossCutting.IoC", "CalixtosStore.Infra\CalixtosStore.Infra.CossCutting.IoC.csproj", "{50F0D587-3079-4ABF-A416-B7F634113DCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalixtosStore.Domain.Core", "CalixtosStore.Domain.Core\CalixtosStore.Domain.Core.csproj", "{6405D0F3-6352-4935-AE9F-1E7067D6B6CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalixtosStore.Infra.CrossCutting.Bus", "Equinox.Infra.CrossCutting.Bus\CalixtosStore.Infra.CrossCutting.Bus.csproj", "{020E4F14-B903-4549-B4A9-A40D6F8D7440}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1 Application", "2.1 Application", "{AA69A46D-1A60-41A4-8ACD-F66296116EA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalixtosStore.Data", "CalixtosStore.Data\CalixtosStore.Data.csproj", "{410A9EB9-91FB-4BA3-910A-E0D26E128959}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05906F7D-3EB2-4F5E-BC2B-0D46AB7AE7B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05906F7D-3EB2-4F5E-BC2B-0D46AB7AE7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05906F7D-3EB2-4F5E-BC2B-0D46AB7AE7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05906F7D-3EB2-4F5E-BC2B-0D46AB7AE7B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{609BB1CD-FEB5-44DF-B9A4-359135A192FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609BB1CD-FEB5-44DF-B9A4-359135A192FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609BB1CD-FEB5-44DF-B9A4-359135A192FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609BB1CD-FEB5-44DF-B9A4-359135A192FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93093961-38DB-40A2-8471-F3F353B604AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93093961-38DB-40A2-8471-F3F353B604AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93093961-38DB-40A2-8471-F3F353B604AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93093961-38DB-40A2-8471-F3F353B604AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F0D587-3079-4ABF-A416-B7F634113DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F0D587-3079-4ABF-A416-B7F634113DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F0D587-3079-4ABF-A416-B7F634113DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F0D587-3079-4ABF-A416-B7F634113DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6405D0F3-6352-4935-AE9F-1E7067D6B6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6405D0F3-6352-4935-AE9F-1E7067D6B6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6405D0F3-6352-4935-AE9F-1E7067D6B6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6405D0F3-6352-4935-AE9F-1E7067D6B6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{020E4F14-B903-4549-B4A9-A40D6F8D7440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020E4F14-B903-4549-B4A9-A40D6F8D7440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020E4F14-B903-4549-B4A9-A40D6F8D7440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020E4F14-B903-4549-B4A9-A40D6F8D7440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{410A9EB9-91FB-4BA3-910A-E0D26E128959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410A9EB9-91FB-4BA3-910A-E0D26E128959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410A9EB9-91FB-4BA3-910A-E0D26E128959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410A9EB9-91FB-4BA3-910A-E0D26E128959}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{05906F7D-3EB2-4F5E-BC2B-0D46AB7AE7B8} = {7962C006-D2E8-49BD-9387-CC7DCE2C832D}
+		{609BB1CD-FEB5-44DF-B9A4-359135A192FB} = {60E84AC9-8874-40F5-AEA2-E641014DD4FC}
+		{93093961-38DB-40A2-8471-F3F353B604AA} = {DE0CD24B-A5B4-4AD7-90FA-9FD14467689E}
+		{50F0D587-3079-4ABF-A416-B7F634113DCE} = {B7E19654-1D82-47FB-A03D-4FF238B6F20A}
+		{6405D0F3-6352-4935-AE9F-1E7067D6B6CE} = {DE0CD24B-A5B4-4AD7-90FA-9FD14467689E}
+		{020E4F14-B903-4549-B4A9-A40D6F8D7440} = {B7E19654-1D82-47FB-A03D-4FF238B6F20A}
+		{410A9EB9-91FB-4BA3-910A-E0D26E128959} = {B7E19654-1D82-47FB-A03D-4FF238B6F20A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42672482-9909-4CC5-AD5F-3745309E9440}
+	EndGlobalSection
+EndGlobal
