@@ -1,15 +1,19 @@
 ﻿using CalixtosStore.Domain.Core.Events;
 using Confluent.Kafka;
+using Confluent.Kafka.Admin;
 using Newtonsoft.Json;
 using Serilog;
 using Serilog.Core;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
+using System.Linq;
 
 namespace CalixtosStore.Domain.Producers
 {
     public abstract class Producer<T> : IProducer<T> where T : Mensagem
     {
+        private readonly string _bootstrapServer = "localhost:9092";
+
         protected Producer(string topico)
         {
             Topico = topico;
@@ -17,14 +21,16 @@ namespace CalixtosStore.Domain.Producers
 
         public void SendMensage(T mensagem)
         {
-            Logger logger = ObterLogger();
+            Logger logger = GetLogger();
 
             logger.Information("Iniciando envio da mensagem");
 
-            var config = ObterConfiguracao();
+            var config = GetConfiguration();
 
             var producerMessage = new Message<Null, string>();
             producerMessage.Value = JsonConvert.SerializeObject(mensagem);
+
+            CreateTopic();
 
             using (var producer = new ProducerBuilder<Null, string>(config).Build())
             {
@@ -35,18 +41,43 @@ namespace CalixtosStore.Domain.Producers
             }
         }
 
-        private Logger ObterLogger()
+        /// <summary>
+        /// Vai criar um tópico com 3 partições sem replicação de partições.
+        /// </summary>
+        private void CreateTopic()
+        {
+            using (var adminClient = new AdminClientBuilder(new AdminClientConfig { BootstrapServers = _bootstrapServer }).Build())
+            {
+                try
+                {
+                    if (!adminClient.GetMetadata(TimeSpan.FromSeconds(20)).Topics.Any(x => x.Topic == Topico))
+                    {
+                        adminClient.CreateTopicsAsync(
+                        new TopicSpecification[]
+                        {
+                            new TopicSpecification { Name = Topico, ReplicationFactor = 1, NumPartitions = 3 }
+                        }).Wait();
+                    }
+                }
+                catch (CreateTopicsException e)
+                {
+                    Console.WriteLine($"Ocorreu um erro ao criar o tópico: {e.Results[0].Topic}: {e.Results[0].Error.Reason}");
+                }
+            }
+        }
+
+        private Logger GetLogger()
         {
             return new LoggerConfiguration()
                 .WriteTo.Console(theme: AnsiConsoleTheme.Literate)
                 .CreateLogger();
         }
 
-        private ProducerConfig ObterConfiguracao()
+        private ProducerConfig GetConfiguration()
         {
             return new ProducerConfig
             {
-                BootstrapServers = "localhost:9092",
+                BootstrapServers = _bootstrapServer,
                 Partitioner = Partitioner.Murmur2,
                 EnableDeliveryReports = true,
                 Acks = Acks.Leader

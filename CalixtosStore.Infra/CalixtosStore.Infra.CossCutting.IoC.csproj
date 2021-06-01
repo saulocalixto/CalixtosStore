@@ -13,6 +13,6 @@
 		<ProjectReference Include="..\CalixtosStore.Data\CalixtosStore.Data.csproj" />
 		<ProjectReference Include="..\CalixtosStore.Domain.Core\CalixtosStore.Domain.Core.csproj" />
 		<ProjectReference Include="..\CalixtosStore.Domain\CalixtosStore.Domain.csproj" />
-		<ProjectReference Include="..\Equinox.Infra.CrossCutting.Bus\CalixtosStore.Infra.CrossCutting.Bus.csproj" />
+		<ProjectReference Include="..\CalixtosStore.Infra.CrossCutting.Bus\CalixtosStore.Infra.CrossCutting.Bus.csproj" />
 	</ItemGroup>
 </Project>
