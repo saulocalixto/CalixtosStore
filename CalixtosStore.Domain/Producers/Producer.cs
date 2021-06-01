@@ -50,7 +50,7 @@ namespace CalixtosStore.Domain.Producers
             {
                 try
                 {
-                    if (!adminClient.GetMetadata(TimeSpan.FromSeconds(20)).Topics.Any(x => x.Topic == Topico))
+                    if (TopicNotFound(adminClient))
                     {
                         adminClient.CreateTopicsAsync(
                         new TopicSpecification[]
@@ -64,6 +64,11 @@ namespace CalixtosStore.Domain.Producers
                     Console.WriteLine($"Ocorreu um erro ao criar o tópico: {e.Results[0].Topic}: {e.Results[0].Error.Reason}");
                 }
             }
+        }
+
+        private bool TopicNotFound(IAdminClient adminClient)
+        {
+            return !adminClient.GetMetadata(TimeSpan.FromSeconds(20)).Topics.Any(x => x.Topic == Topico);
         }
 
         private Logger GetLogger()
